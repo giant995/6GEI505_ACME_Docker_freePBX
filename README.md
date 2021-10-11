@@ -1,7 +1,7 @@
 # 6GEI505_ACME_Docker_freePBX
 
 # Introduction
-    Cette application est basée sur le projet [Docker-freePBX par tiredofit](git@github.com:giant995/6GEI505_ACME_Docker_freePBX.git). S'y référer pour la documentation exhaustive ou pour tout problème.
+Cette application est basée sur le projet [Docker-freePBX par tiredofit](git@github.com:giant995/6GEI505_ACME_Docker_freePBX.git). S'y référer pour la documentation exhaustive ou pour tout problème.
 
 # Prerequisites
 
