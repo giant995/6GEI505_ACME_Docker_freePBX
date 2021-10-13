@@ -35,6 +35,7 @@ Il est possible de supprimer les données dans les volumes pour repartir un cont
 1. Exécuter la commande suppression des volumes (irréversibles pour les données) dans le dossier du `docker-compose.yml`
     
     `docker-compose down -v`
+1. Supprimer les dossiers `/data`, `/db`, `dbbackup`, `certs` et `logs` si la précédente commande ne force pas une réinstallation.
     
 `docker-compose` est la commande pour arrêter l'application spécifiée par le `docker-compose.yml` présent dans le répertoire. Le flag `-v` indique la suppression des volumes.
     
