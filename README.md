@@ -30,5 +30,21 @@ Les instructions d'installation assument qu'une interface en ligne de commande  
     
     Il est normal que le navigateur vous avise que l'accès à cette adresse ne soit pas sécuritaire. Les certificats TLS ne sont pas encore générés.
     
+# Recommencer à neuf
+Il est possible de supprimer les données dans les volumes pour repartir un conteneur en condition initiale
+1. Exécuter la commande suppression des volumes (irréversibles pour les données) dans le dossier du `docker-compose.yml`
+    
+    `docker-compose down -v`
+    
+`docker-compose` est la commande pour arrêter l'application spécifiée par le `docker-compose.yml` présent dans le répertoire. Le flag `-v` indique la suppression des volumes.
+    
+# Stopper tous les conteneurs sur l'hôte
+Pour arrêter tous les conteneurs sur l'hôte sans supprimer les données
+1. Exécuter la commande d'arrêt
+
+    `docker stop $(docker ps -aq)`
+    
+La commande `docker stop` permet d'arrêter un ou des conteneurs dont on spécifie le tag. La commande `docker ps -aq` permet de lister tous les conteneurs avec les flags permettant de n'afficher que leur tag. `$()` permet de prendre le résultat d'une commande et de le transformer en variable. Dans le cas présent, on utilise la sortie de la commande qui liste les tags de tous les conteneurs pour en faire une variable pour la commande qui arrête les conteneurs.
+    
 # Considérations
 - Un conteneur n'est pas un endroit idéal pour y emmagasiner des données, car il peut être fréquemment détruit et reconstruit. De ce fait, les données sont emmagasinés via des volumes à l'extérieur du conteneur dans les fichiers de l'hôte.
